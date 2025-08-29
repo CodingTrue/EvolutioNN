@@ -5,6 +5,8 @@ class Tensor:
     def __init__(self, data: Optional[Any] = None):
         self._data = data
 
+    def __bool__(self): return bool(self._data)
+
     def __add__(self, other): return Tensor.add_tensors(self, other)
     def __mul__(self, other): return Tensor.multiply_tensors(self, other)
     def __sub__(self, other): return Tensor.subtract_tensors(self, other)
